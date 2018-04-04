@@ -1,0 +1,244 @@
+ .ms-Fabric {
+    background-color: #f1f1f1;
+  }
+
+  .grid-hyperline {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .thingroup-6 {
+    background-color: #fff;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+  .thingroup-12 {
+    background-color: #fff;
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 28px;
+    padding-top: 20px;
+    padding-right: 28px;
+    padding-bottom: 20px;
+  }
+
+  .thinframe {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+  .navi a {
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .navi a:hover {
+    color: rgb(152, 191, 228);
+  }
+
+  .navi i {
+    margin-top: 10px;
+    font-size: 35px;
+  }
+
+  .navi {
+    padding-left: 0px;
+  }
+
+  .centercontent {
+    text-align: center;
+    align-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: #005a9e;
+    width: 125px;
+    height: 125px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .goaway {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+  .greatericon {
+    font-size: 20px;
+    margin-right: 11px;
+  }
+
+  .ms-Table-overflow {
+    overflow: auto;
+    max-height: 460px;
+  }
+
+  .ms-ListItem-image {
+    font-size: 60px;
+  }
+
+  .ms-ListItem.is-selectable2:hover {
+  background-color: #eaeaea;
+  cursor: pointer;
+  outline: 1px solid transparent;
+  }
+
+  .Widget1 {
+    margin: 0px; 
+    top: 10px; 
+    left: 10px; 
+    width: 300px; 
+    height: 235px;
+    background-color:#fff;
+    margin-right: 8px!important;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 200px;
+    box-shadow: 2px 2px 0 #e6e6e6;
+    border: 1px solid #fff;
+    margin-bottom: 12px;
+  }
+
+  .Widget1-Header {
+    line-break: strict;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 12px;
+    border-bottom-color: #e6e6e6;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    box-sizing: border-box;
+  }
+
+  .Widget1-Header:hover {
+    background-color: #b3d6f2;
+    cursor: pointer;
+  }
+
+  .WidgetIcon {
+  margin-top:2px;
+  font-size: 26px;
+  width: 42px;
+  padding-left: 20px;
+  font-size: 21px;
+  display: inline-block;
+  color: #505050;
+  vertical-align: top;
+  }
+
+.widgetTitle {
+  font-size: 18px;
+  color: #505050!important;
+  font-weight: 600;
+  line-height: 24px;
+  width: 215px;
+  font-family: "Segoe UI Light","Segoe UI",Segoe,Tahoma,Helvetica,Arial,Sans-Serif,SegoeUI-Light-final;
+  text-align: left;
+  margin: 0 0 0 0;
+  }
+
+  .WidgetLabel {
+  margin-left: 0;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  padding-right: 8px;
+  padding-left: 8px;
+  position: absolute;
+  }
+
+  .f-txt-ovrflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  }
+
+  .Widget1-lst-itm:hover {
+  background-color: #b3d6f2;
+  cursor: pointer;
+  text-decoration: none!important;
+  }
+
+  .Widget1-lst-itm {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+  .Widget1-lst-itm-Headline-icon {
+  display: inline;
+  padding-left: 20px;
+  max-width: 42px;
+  min-height: 32px;
+  text-align: center;
+  vertical-align: text-top;
+  }
+  
+  .Widget1-lst-itm-Headline {
+  height: 23px;
+  padding-top: 2px;
+  font-size: 15px;
+  }
+
+  .Widget1-lst-itm-Headline-Entry {
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 24px;
+  text-align: left;
+  max-width: 250px;
+  padding-bottom: 1px;
+  }
+
+  .Widget1-lst-itm-Headline-SecondLine {
+  display: inline-block;
+  padding-right: 24px;
+  text-align: left;
+  padding-bottom: 1px;
+  max-width: 280px;
+  padding-left: 48px!important;
+  }
+
+.ms-Panel2 {
+  top:50px; 
+  height: calc(100% - 50px);
+}
+
+  .ms-Panel2-contentInner {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-top:0px;
+  background-color:#505050; 
+  }
+
+  .ms-Panel2-contentInner p, .ms-Panel2-closeButton i {
+    color: #fff;
+  }
+
+  .ms-Panel2-content {
+    background-color:#fff; 
+    height: calc(-50px + 100%);
+    overflow-x: hidden;
+  }
+  
+  .ms-Panel2-content p {
+    color: #505050;
+  }
+
+  .ms-Panel2-headerText {
+    margin-left: 20px;
+  }
+
+  .ms-Panel2-content p {
+    margin-left: 0px;
+  }
+
+  .ms-Panel2-content i {
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 30px;
+}

@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale-1">
+  <title>ThinCenterUI</title>
+
+  <link rel="stylesheet" href="css/fabric.min.css">
+  <link rel="stylesheet" href="css/fabric.css">
+  <link rel="stylesheet" href="css/fabric.components.min.css" />
+  <link rel="stylesheet" href="css/docs.min.css">
+  <link rel="stylesheet" href="css/docs.css">
+  <script src="css/fabric.min.js"></script>
+  <script src="morrischart/jquery.js"></script>
+  <link rel="stylesheet" href="css/thincenter.css"> 
+
+  <style>
+
+    .morris-hover.morris-default-style {
+      position: absolute !important;
+      background-color: ghostWhite;
+    }
+
+    svg {
+      width: 100% !important;
+    }
+
+  </style>
+
+</head>
+
+<body class="ms-Fabric">
+  <div id="body-content">
+
+    <div id="Header" class="docs-Header" style="padding-left:70px;">
+      <a class="ms-font-xxl ms-fontColor-white" href="/">Thincenter</a>
+      <div class="Header-buttons">
+
+        <a href="#" class="Header-button ms-fontColor-white">
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-lg10 goaway">
+              <%=Context.User.Identity.Name %>
+            </div>
+            <div class="ms-Grid-col ms-u-lg2" style="width:50px; margin-top:5px;">
+              <div class="ms-Persona ms-Persona--sm" style="width: 45px; height: 45px;">
+                <div class="ms-Persona-imageArea">
+                  <img class="ms-Persona-image" src="https://outlook.office365.com/owa/service.svc/s/GetPersonaPhoto?email=<%=Context.User.Identity.Name %>&amp;UA=0&amp;size=HR64x64&amp;sc=1521450567085">
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+
+    <div class="ms-Panel-NavButton">
+      <button class="ms-Button" style="background-color:#999; border-color:#999; position:fixed; top:0px; left:0px; max-width:52px; min-width:52px; height:50px; z-index:100;">
+        <span class="ms-Button-label">
+          <i class="ms-Icon ms-Icon--GlobalNavButton"></i>
+        </span>
+      </button>
+      <div class="ms-Panel ms-Panel--left">
+        <button class="ms-Panel-closeButton ms-PanelAction-close">
+          <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+        </button>
+        <div class="ms-Panel-contentInner">
+          <p class="ms-Panel-headerText">Exchange Health Center</p>
+          <div class="ms-Panel-content">
+
+            <ul class="navi">
+              <div class="ms-Grid">
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="default.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--AutoRacing"></i>
+                                  <div>EHC Dashboard</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="site1.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Health"></i>
+                                  <div>Services Balancing</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="site2.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--MailForward"></i>
+                                  <div>Mail Queue View</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="site4.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Warning12"></i>
+                                  <div>Exchange Events</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--HardDriveGroup"></i>
+                                  <div>Storage Monitor</div>
+                              </div>
+                          </a>
+                      </il>
+
+
+
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Database"></i>
+                                  <div>Database Monitor</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <p class="ms-Panel-headerText">Skype Health Center</p>
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="site3.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent" style="background-color:#12A5F4">
+                                  <i class="ms-Icon ms-Icon--SkypeForBusinessLogo"></i>
+                                  <div>Skype Dashboard</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent" style="background-color:#12A5F4">
+                                  <i class="ms-Icon ms-Icon--TransferCall"></i>
+                                  <div>Call Quality Board</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+              </div>
+
+          </ul>
+
+            <!-- End Nav -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ms-Grid">
+      <div class="ms-Grid-row">
+        <div class="docs-Styles-section" id="localization">
+
+          <div class="ms-Breadcrumb" style="padding-top:50px; padding-left:15px;">
+            <div class="ms-Breadcrumb-overflow">
+              <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More"></div>
+              <div class="ms-Breadcrumb-overflowMenu">
+                <ul class="ms-ContextualMenu is-open"></ul>
+              </div>
+            </div>
+            <ul class="ms-Breadcrumb-list">
+              <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink">ThinCenter</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+              </li>
+              <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink">Dashboard</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start Site -->
+
+      <div class="ms-Grid thinframe">
+
+        <div class="ms-Grid-row">
+
+          <div class="ms-Grid-col ms-u-lg6">
+
+            <div class="thingroup-6">
+
+              <span class="ms-font-su ms-fontColor-themePrimary">Database Availability Groups</span>
+              <div class="ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListItem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--OfflineStorageSolid"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">DAG01</span>
+                  <span class="ms-ListItem-secondaryText">PAM: ExServer03</span>
+                  <span class="ms-ListItem-tertiaryText">WitnessServerInUse:Primary</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                  <div class="ms-Panel ms-Panel--lg ms-Panel2 ms-Panel-ExchangeServer-Details">
+                    <button class="ms-Panel-closeButton ms-PanelAction-close ms-Panel2-closeButton">
+                      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                    </button>
+                    <div class="ms-Panel-contentInner ms-Panel2-contentInner">
+                      <p class="ms-Panel-headerText ms-Panel2-headerText">DAG01</p>
+                        <div class="ms-Panel-content ms-Panel2-content">
+                          <div class="ms-Grid-row grid-hyperline">
+                            <div class="ms-Grid-col ms-u-lg2">
+                                <i class="ms-Icon ms-Icon--OfflineStorageSolid"></i>
+                            </div>
+                            <div class="ms-Grid-col ms-u-lg4">
+                              <p>ActivationPreference</p>
+                            </div>
+                            <div class="ms-Grid-col ms-u-lg6">
+                              <p>1</p>
+                            </div>
+                          </div>
+                          <div class="ms-Grid-row grid-hyperline">
+                            <div class="ms-Grid-col ms-u-lg2">
+                                <i class="ms-Icon ms-Icon--ExploreData"></i>
+                            </div>
+                            <div class="ms-Grid-col ms-u-lg4">
+                              <p>ContentIndexState</p>
+                            </div>
+                            <div class="ms-Grid-col ms-u-lg6">
+                              <p></p>
+                            </div>
+                          </div>
+                          <div class="ms-Grid-row grid-hyperline">
+                            <div class="ms-Grid-col ms-u-lg2">
+                                <i class="ms-Icon ms-Icon--BuildQueue"></i>
+                            </div>
+                            <div class="ms-Grid-col ms-u-lg4">
+                              <p>QueueLength</p>
+                            </div>
+                            <div class="ms-Grid-col ms-u-lg6">
+                              <p></p>
+                            </div>
+                          </div>
+                          <div class="ms-Grid-row grid-hyperline">
+                            <div class="ms-Grid-col ms-u-lg2">
+                                <i class="ms-Icon ms-Icon--HardDrive"></i>
+                            </div>
+                            <div class="ms-Grid-col ms-u-lg4">
+                              <p>DiskSpace</p>
+                            </div>
+                            <div class="ms-Grid-col ms-u-lg6">
+                              <p></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+              </div>
+              <div class="ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--OfflineStorageSolid"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">DAG02</span>
+                  <span class="ms-ListItem-secondaryText">PAM: ExServer05</span>
+                  <span class="ms-ListItem-tertiaryText">WitnessServerInUse:Primary</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                  <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                    <button class="ms-Panel-closeButton ms-PanelAction-close">
+                      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                    </button>
+                    <div class="ms-Panel-contentInner">
+                      <p class="ms-Panel-headerText">DAG02</p>
+                      <div class="ms-Panel-content">
+                        <span class="ms-font-m">DatabaseAvailabilityGroups</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+              <div class="ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--OfflineStorageSolid"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">DAG03</span>
+                  <span class="ms-ListItem-secondaryText">PAM: ExServer09</span>
+                  <span class="ms-ListItem-tertiaryText">WitnessServerInUse:Primary</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                  <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                    <button class="ms-Panel-closeButton ms-PanelAction-close">
+                      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                    </button>
+                    <div class="ms-Panel-contentInner">
+                      <p class="ms-Panel-headerText">DAG03</p>
+                      <div class="ms-Panel-content">
+                        <span class="ms-font-m">DatabaseAvailabilityGroups</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+            </div>
+          </div>
+
+          <div class="ms-Grid-col ms-u-lg6">
+            <div class="thingroup-6">
+              <span class="ms-font-su ms-fontColor-themePrimary">Exchange Server Session</span>
+              <div id="linechart1" style="height: 246px;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ms-Grid-row">
+
+          <div class="thingroup-12">
+
+            <div class="ms-Grid-row">
+              <span class="ms-font-su ms-fontColor-themePrimary">Exchange Server</span>
+            </div>
+
+            <div class="ms-Grid-row">
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer01</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer01</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer02</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer02</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer03</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer03</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer04</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer04</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ms-Grid-row">
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer05</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer05</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer06</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer06</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer07</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer07</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer08</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer08</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="ms-Grid-row">
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer09</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer09</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer10</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer11</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer11</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer11</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--Server"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">ExServer12</span>
+                  <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                  <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                </li>
+                <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                  <button class="ms-Panel-closeButton ms-PanelAction-close">
+                    <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                  </button>
+                  <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">ExServer12</p>
+                    <div class="ms-Panel-content">
+                      <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  <!-- End Site -->
+
+  <script>
+    var currPage = window.location.pathname.replace(/\//g, '');
+    if (currPage) {
+      document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+    }
+  </script>
+
+  <script type="text/javascript">
+    var PanelExamples = document.getElementsByClassName("ms-Panel-NavButton");
+    for (var i = 0; i < PanelExamples.length; i++) {
+      (function () {
+        var PanelExampleButton = PanelExamples[i].querySelector(".ms-Button");
+        var PanelExamplePanel = PanelExamples[i].querySelector(".ms-Panel");
+        PanelExampleButton.addEventListener("click", function (i) {
+          new fabric['Panel'](PanelExamplePanel);
+        });
+      }());
+    }
+  </script>
+
+  <script type="text/javascript">
+    var PanelExamples = document.getElementsByClassName("ms-Panel-ExchangeServer");
+    for (var i = 0; i < PanelExamples.length; i++) {
+      (function () {
+        var PanelExampleButton = PanelExamples[i].querySelector(".ms-ListItem");
+        var PanelExamplePanel = PanelExamples[i].querySelector(".ms-Panel-ExchangeServer-Details");
+        PanelExampleButton.addEventListener("click", function (i) {
+          new fabric['Panel'](PanelExamplePanel);
+        });
+      }());
+    }
+  </script>
+
+  <script type="text/javascript">
+    var PersonaElements = document.querySelectorAll(".ms-Persona");
+    for (var i = 0; i < PersonaElements.length; i++) {
+      new fabric['Persona'](PersonaElements[i]);
+    }
+  </script>
+
+  <script type="text/javascript">
+    var ListItemElements = document.querySelectorAll(".ms-ListItem");
+    for (var i = 0; i < ListItemElements.length; i++) {
+      new fabric['ListItem'](ListItemElements[i]);
+    }
+  </script>
+
+  <!-- start Morris Chart -->
+
+  <script src="morrischart/plugins/morris/morris.min.js"></script>
+  <script src="morrischart/plugins/morris/raphael.min.js"></script>
+  <script src="morrischart/plugins/morris.css"></script>
+  <script>
+    var ExSessions = new Morris.Line({
+      element: 'linechart1',
+      data: [
+        { hours: '00:05', rpc: 708, owa: 29, eas: 72, ews: 50 },
+        { hours: '00:11', rpc: 713, owa: 29, eas: 71, ews: 50 },
+        { hours: '00:17', rpc: 713, owa: 24, eas: 65, ews: 51 },
+        { hours: '00:23', rpc: 712, owa: 26, eas: 58, ews: 53 },
+        { hours: '00:29', rpc: 710, owa: 27, eas: 59, ews: 54 },
+        { hours: '00:35', rpc: 707, owa: 23, eas: 56, ews: 48 },
+        { hours: '00:41', rpc: 710, owa: 25, eas: 47, ews: 49 },
+        { hours: '00:47', rpc: 701, owa: 24, eas: 34, ews: 50 },
+        { hours: '00:53', rpc: 703, owa: 21, eas: 40, ews: 52 },
+        { hours: '00:59', rpc: 707, owa: 15, eas: 17, ews: 90 },
+        { hours: '01:05', rpc: 696, owa: 31, eas: 21, ews: 5 },
+        { hours: '01:11', rpc: 699, owa: 18, eas: 16, ews: 5 },
+        { hours: '01:17', rpc: 699, owa: 24, eas: 6, ews: 10 },
+        { hours: '01:23', rpc: 690, owa: 24, eas: 2, ews: 7 },
+        { hours: '01:29', rpc: 696, owa: 24, eas: 5, ews: 4 },
+        { hours: '01:35', rpc: 693, owa: 23, eas: 5, ews: 5 },
+        { hours: '01:41', rpc: 683, owa: 22, eas: 5, ews: 6 },
+        { hours: '01:47', rpc: 690, owa: 29, eas: 7, ews: 2 },
+        { hours: '01:53', rpc: 690, owa: 17, eas: 3, ews: 4 },
+        { hours: '01:59', rpc: 691, owa: 29, eas: 5, ews: 7 },
+        { hours: '02:05', rpc: 688, owa: 27, eas: 4, ews: 5 },
+        { hours: '02:11', rpc: 688, owa: 26, eas: 10, ews: 2 },
+        { hours: '02:17', rpc: 680, owa: 29, eas: 6, ews: 5 },
+        { hours: '02:23', rpc: 685, owa: 28, eas: 4, ews: 2 },
+        { hours: '02:29', rpc: 682, owa: 21, eas: 5, ews: 3 },
+        { hours: '02:35', rpc: 683, owa: 23, eas: 3, ews: 2 },
+        { hours: '02:41', rpc: 683, owa: 21, eas: 4, ews: 3 },
+        { hours: '02:47', rpc: 674, owa: 23, eas: 6, ews: 2 },
+        { hours: '02:53', rpc: 675, owa: 20, eas: 4, ews: 2 },
+        { hours: '02:59', rpc: 683, owa: 20, eas: 4, ews: 2 },
+        { hours: '03:05', rpc: 680, owa: 16, eas: 4, ews: 4 },
+        { hours: '03:11', rpc: 675, owa: 13, eas: 9, ews: 5 },
+        { hours: '03:17', rpc: 674, owa: 28, eas: 5, ews: 3 },
+        { hours: '03:23', rpc: 675, owa: 17, eas: 3, ews: 6 },
+        { hours: '03:29', rpc: 674, owa: 20, eas: 3, ews: 9 },
+        { hours: '03:35', rpc: 674, owa: 23, eas: 1, ews: 7 },
+        { hours: '03:41', rpc: 673, owa: 24, eas: 2, ews: 5 },
+        { hours: '03:47', rpc: 673, owa: 24, eas: 0, ews: 4 },
+        { hours: '03:53', rpc: 674, owa: 21, eas: 0, ews: 5 },
+        { hours: '03:59', rpc: 676, owa: 26, eas: 1, ews: 5 },
+        { hours: '04:05', rpc: 674, owa: 16, eas: 1, ews: 7 },
+        { hours: '04:11', rpc: 677, owa: 26, eas: 1, ews: 5 },
+        { hours: '04:17', rpc: 676, owa: 25, eas: 0, ews: 4 },
+        { hours: '04:23', rpc: 669, owa: 25, eas: 1, ews: 6 },
+        { hours: '04:29', rpc: 677, owa: 29, eas: 1, ews: 5 },
+        { hours: '04:35', rpc: 677, owa: 28, eas: 0, ews: 6 },
+        { hours: '04:41', rpc: 675, owa: 21, eas: 0, ews: 5 },
+        { hours: '04:47', rpc: 677, owa: 23, eas: 2, ews: 8 },
+        { hours: '04:53', rpc: 680, owa: 21, eas: 0, ews: 8 },
+        { hours: '04:59', rpc: 693, owa: 17, eas: 1, ews: 6 },
+        { hours: '05:05', rpc: 696, owa: 20, eas: 3, ews: 6 },
+        { hours: '05:11', rpc: 693, owa: 19, eas: 2, ews: 6 },
+        { hours: '05:17', rpc: 696, owa: 19, eas: 2, ews: 9 },
+        { hours: '05:23', rpc: 697, owa: 13, eas: 4, ews: 15 },
+        { hours: '05:29', rpc: 698, owa: 32, eas: 6, ews: 10 },
+        { hours: '05:35', rpc: 705, owa: 18, eas: 5, ews: 17 },
+        { hours: '05:41', rpc: 705, owa: 19, eas: 8, ews: 16 },
+        { hours: '05:47', rpc: 707, owa: 23, eas: 16, ews: 14 },
+        { hours: '05:53', rpc: 705, owa: 23, eas: 16, ews: 28 },
+        { hours: '05:59', rpc: 727, owa: 26, eas: 18, ews: 62 },
+        { hours: '06:05', rpc: 759, owa: 20, eas: 29, ews: 96 },
+        { hours: '06:11', rpc: 776, owa: 25, eas: 37, ews: 122 },
+        { hours: '06:17', rpc: 819, owa: 15, eas: 43, ews: 180 },
+        { hours: '06:23', rpc: 894, owa: 24, eas: 50, ews: 260 },
+        { hours: '06:29', rpc: 1045, owa: 29, eas: 54, ews: 487 },
+        { hours: '06:35', rpc: 1335, owa: 26, eas: 59, ews: 877 },
+        { hours: '06:41', rpc: 1594, owa: 30, eas: 73, ews: 1216 },
+        { hours: '06:47', rpc: 1810, owa: 26, eas: 76, ews: 1411 },
+        { hours: '06:53', rpc: 2035, owa: 20, eas: 96, ews: 1640 },
+        { hours: '06:59', rpc: 2198, owa: 26, eas: 96, ews: 1806 },
+        { hours: '07:05', rpc: 2342, owa: 25, eas: 106, ews: 1927 },
+        { hours: '07:11', rpc: 2510, owa: 19, eas: 117, ews: 2134 },
+        { hours: '07:17', rpc: 2762, owa: 22, eas: 117, ews: 2379 },
+        { hours: '07:23', rpc: 2967, owa: 22, eas: 109, ews: 2625 },
+        { hours: '07:29', rpc: 3156, owa: 18, eas: 150, ews: 2845 },
+        { hours: '07:35', rpc: 3376, owa: 16, eas: 144, ews: 3024 },
+        { hours: '07:41', rpc: 3587, owa: 34, eas: 165, ews: 3194 },
+        { hours: '07:47', rpc: 3791, owa: 21, eas: 163, ews: 3401 },
+        { hours: '07:53', rpc: 3984, owa: 20, eas: 184, ews: 3603 },
+        { hours: '07:59', rpc: 4193, owa: 25, eas: 194, ews: 3777 },
+        { hours: '08:05', rpc: 4449, owa: 29, eas: 183, ews: 4113 },
+        { hours: '08:11', rpc: 4666, owa: 27, eas: 186, ews: 4260 },
+        { hours: '08:17', rpc: 4929, owa: 27, eas: 191, ews: 4505 },
+        { hours: '08:23', rpc: 5131, owa: 31, eas: 221, ews: 4689 },
+        { hours: '08:29', rpc: 5350, owa: 22, eas: 210, ews: 4971 },
+        { hours: '08:35', rpc: 5545, owa: 31, eas: 197, ews: 5462 },
+        { hours: '08:41', rpc: 5808, owa: 32, eas: 211, ews: 5736 },
+        { hours: '08:47', rpc: 6018, owa: 32, eas: 217, ews: 6016 },
+        { hours: '08:53', rpc: 6230, owa: 34, eas: 220, ews: 6116 },
+      ],
+      xkey: 'hours',
+      parseTime: false,
+      resize: true,
+      pointSize: 0,
+      lineColors: ['#c072bb', '#df6f53', '#5fd391', '#608ed2'],
+      ykeys: ['rpc', 'owa', 'eas', 'ews'],
+      labels: ['RPC', 'OWA', 'EAS', 'EWS']
+    });
+  </script>
+
+  <!-- end Morris Chart -->
+
+</body>
+
+</html>

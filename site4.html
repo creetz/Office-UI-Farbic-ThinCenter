@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale-1">
+  <title>ThinCenterUI</title>
+
+  <link rel="stylesheet" href="css/fabric.min.css">
+  <link rel="stylesheet" href="css/fabric.css">
+  <link rel="stylesheet" href="css/fabric.components.min.css" />
+  <link rel="stylesheet" href="css/docs.min.css">
+  <link rel="stylesheet" href="css/docs.css">
+  <script src="css/fabric.min.js"></script>
+  <script src="morrischart/jquery.js"></script>
+  <link rel="stylesheet" href="css/thincenter.css">
+
+<style>
+    .ms-Table td.text span {
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+    height: 100px;
+}
+
+.ms-Table-row, .ms-Table tr {
+    line-height: 20px;
+    vertical-align: top !important;
+}
+
+.ms-Icon--IncidentTriangle {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.exev-table-td-small {
+    width:70px;
+}
+
+.ms-Table thead th {
+    text-align: center;
+}
+
+.ms-Table-overflow {
+    overflow: auto;
+    max-height: 640px;
+}
+
+</style>
+
+</head>
+
+<body class="ms-Fabric">
+    <div id="body-content">
+
+        <div id="Header" class="docs-Header" style="padding-left:70px;">
+            <a class="ms-font-xxl ms-fontColor-white" href="/">Thincenter</a>
+            <div class="Header-buttons">
+
+                <a href="#" class="Header-button ms-fontColor-white">
+                    <div class="ms-Grid-row">
+                        <div class="ms-Grid-col ms-u-lg10 goaway">
+                            <%=Context.User.Identity.Name %>
+                        </div>
+                        <div class="ms-Grid-col ms-u-lg2" style="width:50px; margin-top:5px;">
+                            <div class="ms-Persona ms-Persona--sm" style="width: 45px; height: 45px;">
+                                <div class="ms-Persona-imageArea">
+                                    <img class="ms-Persona-image" src="https://outlook.office365.com/owa/service.svc/s/GetPersonaPhoto?email=<%=Context.User.Identity.Name %>&amp;UA=0&amp;size=HR64x64&amp;sc=1521450567085">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+
+        <div class="ms-Panel-NavButton">
+            <button class="ms-Button" style="background-color:#999; border-color:#999; position:fixed; top:0px; left:0px; max-width:52px; min-width:52px; height:50px; z-index:100;">
+        <span class="ms-Button-label">
+          <i class="ms-Icon ms-Icon--GlobalNavButton"></i>
+        </span>
+      </button>
+            <div class="ms-Panel ms-Panel--left">
+                <button class="ms-Panel-closeButton ms-PanelAction-close">
+          <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+        </button>
+                <div class="ms-Panel-contentInner">
+                    <p class="ms-Panel-headerText">Exchange Health Center</p>
+                    <div class="ms-Panel-content">
+
+                        <ul class="navi">
+                            <div class="ms-Grid">
+
+                                <div class="ms-Grid-row">
+                                    <il>
+                                        <a class="ms-Link" href="default.html">
+                                            <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                                <i class="ms-Icon ms-Icon--AutoRacing"></i>
+                                                <div>EHC Dashboard</div>
+                                            </div>
+                                        </a>
+                                    </il>
+
+                                    <il>
+                                        <a class="ms-Link" href="site1.html">
+                                            <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                                <i class="ms-Icon ms-Icon--Health"></i>
+                                                <div>Services Balancing</div>
+                                            </div>
+                                        </a>
+                                    </il>
+                                </div>
+
+                                <div class="ms-Grid-row">
+                                    <il>
+                                        <a class="ms-Link" href="site2.html">
+                                            <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                                <i class="ms-Icon ms-Icon--MailForward"></i>
+                                                <div>Mail Queue View</div>
+                                            </div>
+                                        </a>
+                                    </il>
+
+                                    <il>
+                                        <a class="ms-Link" href="site4.html">
+                                            <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                                <i class="ms-Icon ms-Icon--Warning12"></i>
+                                                <div>Exchange Events</div>
+                                            </div>
+                                        </a>
+                                    </il>
+                                </div>
+
+                                <div class="ms-Grid-row">
+                                    <il>
+                                        <a class="ms-Link" href="#">
+                                            <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                                <i class="ms-Icon ms-Icon--HardDriveGroup"></i>
+                                                <div>Storage Monitor</div>
+                                            </div>
+                                        </a>
+                                    </il>
+
+
+
+                                    <il>
+                                        <a class="ms-Link" href="#">
+                                            <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                                <i class="ms-Icon ms-Icon--Database"></i>
+                                                <div>Database Monitor</div>
+                                            </div>
+                                        </a>
+                                    </il>
+                                </div>
+
+                                <p class="ms-Panel-headerText">Skype Health Center</p>
+                                <div class="ms-Grid-row">
+                                    <il>
+                                        <a class="ms-Link" href="site3.html">
+                                            <div class="ms-Grid-col ms-u-lg6 centercontent" style="background-color:#12A5F4">
+                                                <i class="ms-Icon ms-Icon--SkypeForBusinessLogo"></i>
+                                                <div>Skype Dashboard</div>
+                                            </div>
+                                        </a>
+                                    </il>
+
+                                    <il>
+                                        <a class="ms-Link" href="#">
+                                            <div class="ms-Grid-col ms-u-lg6 centercontent" style="background-color:#12A5F4">
+                                                <i class="ms-Icon ms-Icon--TransferCall"></i>
+                                                <div>Call Quality Board</div>
+                                            </div>
+                                        </a>
+                                    </il>
+                                </div>
+
+                            </div>
+
+                        </ul>
+
+                        <!-- End Nav -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ms-Grid">
+            <div class="ms-Grid-row">
+                <div class="docs-Styles-section" id="localization">
+
+                    <div class="ms-Breadcrumb" style="padding-top:50px; padding-left:15px;">
+                        <div class="ms-Breadcrumb-overflow">
+                            <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More"></div>
+                            <div class="ms-Breadcrumb-overflowMenu">
+                                <ul class="ms-ContextualMenu is-open"></ul>
+                            </div>
+                        </div>
+                        <ul class="ms-Breadcrumb-list">
+                            <li class="ms-Breadcrumb-listItem">
+                                <a class="ms-Breadcrumb-itemLink">ThinCenter</a>
+                                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+                            </li>
+                            <li class="ms-Breadcrumb-listItem">
+                                <a class="ms-Breadcrumb-itemLink">Exchange Events</a>
+                                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Site -->
+
+            <div class="ms-Grid thinframe">
+
+
+
+                <div class="ms-Grid-row">
+
+                    <div class="thingroup-12" style="overflow-x: auto;">
+
+                        <div class="ms-Grid-row">
+                            <span class="ms-font-su ms-fontColor-themePrimary">Exchange Events</span>
+                        </div>
+
+                        <div class="ms-Grid-row" style="margin-top:20px;">
+                            <div class="ms-SearchBox">
+                                <input class="ms-SearchBox-field" type="text" value="" id="myInput">
+                                <label class="ms-SearchBox-label">
+                  <i class="ms-SearchBox-icon ms-Icon ms-Icon--Search"></i>
+                  <span class="ms-SearchBox-text">Search</span>
+                </label>
+                                <div class="ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel">
+                                    <button class="ms-CommandButton-button">
+                    <span class="ms-CommandButton-icon">
+                      <i class="ms-Icon ms-Icon--Clear"></i>
+                    </span>
+                    <span class="ms-CommandButton-label"></span>
+                  </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ms-Grid-row">
+
+                            <div class="ms-Pivot">
+                                <ul class="ms-Pivot-links">
+                                    <li class="ms-Pivot-link is-selected" data-content="ApplicationLog" title="ApplicationLog" tabindex="1">
+                                        ApplicationLog
+                                    </li>
+                                    <li class="ms-Pivot-link " data-content="SystemLog" title="SystemLog" tabindex="1">
+                                        SystemLog
+                                    </li>
+                                    <li class="ms-Pivot-link " data-content="ApplicationLogFiltered" title="ApplicationLogFiltered" tabindex="1">
+                                        ApplicationLog (FilteredEventIDs)
+                                    </li>
+                                    <li class="ms-Pivot-link" data-content="SystemLogFiltered" title="SystemLogFiltered" tabindex="1">
+                                        SystemLog (FilteredEventIDs)
+                                    </li>
+                                </ul>
+                                <div class="ms-Pivot-content" data-content="ApplicationLog">
+                                    <table class="ms-Table ms-Table--fixed" style="min-width: 1400px;">
+                                        <thead>
+                                            <tr>
+                                                <th class="exev-table-td-small"></th>
+                                                <th>Servername</th>
+                                                <th class="exev-table-td-small">EventID</th>
+                                                <th class="exev-table-td-small">EventCount</th>
+                                                <th>ProviderName</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="ms-Table-overflow" style="min-width: 1400px;">
+                                        <table class="ms-Table ms-Table--fixed ms-Table--selectable">
+                                           <tbody id="myTable">
+                                            <tr>
+                                                    <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle" style="color: rgb(255, 0, 0);"></i></td>
+                                                    <td>ExServer02.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 4</td>
+                                                    <td class="exev-table-td-small">3</td>
+                                                    <td> MSExchange Control Panel</td>
+                                                    <td class="text"><span>Current user: 'contoso.local/contoso-space/killerkommando/Benutzer/u123123kjsdldkjsld'
+                                            Request for URL 'https://ExServer02.contoso.local:444/ecp/DDI/DDIService.svc/GetObject?schema=Heartbeat&amp;ua=0&amp;msExchEcpCanary=J1dXrcUAE0qsIU7yTOdgu3tGBFNJmdUIe4XM3ma5dTFsyiau5NzEmMwg7IcTLTyTzm7m3aHSfos.(https://owa.contoso.local/ecp/DDI/DDIService.svc/GetObject?schema=Heartbeat&amp;ua=0&amp;                                          msExchEcpCanary=J1dXrcUAE0qsIU7yTOdgu3tGBFNJmdUIe4XM3ma5dTFsyiau5NzEmMwg7IcTLTyTzm7m3aHSfos.)' failed with the following error:
+                                            Microsoft.Exchange.Management.ControlPanel.RegionalSettingsNotConfiguredException: We couldn't process the request because the user 'contoso.local/contoso-space/killerkommando/Benutzer/u12192382wiod' hasn't signed in to Outlook Web App and selected a language and a time zone. Ask the user                                           to do this, or, if you are a member of the built-in Organization Management or Help Desk role group, you can use Window PowerShell to select a language and time zone for them.
+                                               at Microsoft.Exchange.Management.ControlPanel.LocalSession.RequestReceived()
+                                               at Microsoft.Exchange.Management.ControlPanel.RbacModule.Application_PostAuthenticateRequest(Object sender, EventArgs e)
+                                               at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+                                               at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+                                               at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)
+                                               at Microsoft.Exchange.Management.ControlPanel.LocalSession.RequestReceived()
+                                               at Microsoft.Exchange.Management.ControlPanel.RbacModule.Application_PostAuthenticateRequest(Object sender, EventArgs e)
+                                               at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+                                               at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+                                               at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)
+
+                                            Flight info: Features:[[Global.DistributedKeyManagement, False],[Global.GlobalCriminalCompliance, False],[Global.MultiTenancy, False],[Global.WindowsLiveID, False],[Eac.AllowMailboxArchiveOnlyMigration, True],[Eac.AllowRemoteOnboardingMovesOnly, False],[Eac.BulkPermissionAddRemove, True],                                           [Eac.CmdletLogging, True],[Eac.CrossPremiseMigration, False],[Eac.DevicePolicyMgmtUI, False],[Eac.DiscoveryDocIdHint, False],[Eac.DiscoveryPFSearch, False],[Eac.DiscoverySearchStats, False],[Eac.DlpFingerprint, False],[Eac.EACClientAccessRulesEnabled, False],[Eac.GeminiShell, False],                                        [Eac.ManageMailboxAuditing, False],[Eac.ModernGroups, False],[Eac.Office365DIcon, False],[Eac.OrgIdADSeverSettings, False],[Eac.RemoteDomain, False],[Eac.UCCAuditReports, False],[Eac.UCCPermissions, False],[Eac.UnifiedAuditPolicy, False],[Eac.UnifiedComplianceCenter, False],[Eac.UnifiedPolicy,                                          False],[Eac.UnlistedServices, False],],  Flights:[],  Constraints:[[LOC, DE-DE],[MACHINE, APP370006],[MODE, ENTERPRISE],[PROCESS, W3WP],[USER, ANNIKA.MARKOWSKI@],[USERTYPE, BUSINESS],], IsGlobalSnapshot: False</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(255, 0, 0);"></i></td>
+                                                    <td>ExServer11.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 8</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange CmdletLogs</td>
+                                                    <td class="text"><span></span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(255, 0, 0);"></i></td>
+                                                    <td>ExServer02.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1012</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchangeIS</td>
+                                                    <td class="text"><span>Exchange Server Information Store has encountered an error while executing a full-text index query ("and(subject:string("SearchQueryStxProbe*", mode="and"), folderid:string("197B40AFC51E30478B5A2D9AAABFACA300000000010C0000"))"). Error information:                                          System.TimeoutException: Failed to open a channel.
+                                               at Microsoft.Exchange.Search.OperatorSchema.PagingImsFlowExecutor.ExecuteServiceCall(IProcessingEngineChannel&amp; serviceProxy, Action`1 call, Int32 retryCount)
+                                               at Microsoft.Exchange.Search.OperatorSchema.PagingImsFlowExecutor.ExecuteSearchFlow(String flowName, Dictionary`2 inputData)
+                                               at Microsoft.Exchange.Search.OperatorSchema.PagingImsFlowExecutor.<executeinternal>d__23.MoveNext()
+                                               at Microsoft.Exchange.Search.OperatorSchema.PagingImsFlowExecutor.<executesimple>d__a.MoveNext()
+                                               at Microsoft.Exchange.Server.Storage.FullTextIndex.FullTextIndexQuery.ExecutePagedFullTextIndexQuery(Guid databaseGuid, Guid mailboxGuid, Int32 mailboxNumber, String query, CultureInfo culture, Guid correlationId, Boolean needConversationId, QueryLoggingContext loggingContext, PagedQueryResults                                          pagedQueryResults)
+                                               at Microsoft.Exchange.Server.Storage.StoreCommonServices.StoreFullTextIndexQuery.ExecuteOnePage(Context context, MailboxState mailboxState, Boolean needConversationDocumentId, SearchExecutionDiagnostics diagnostics)</executesimple></executeinternal></span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(255, 0, 0);"></i></td>
+                                                    <td>ExServer04.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 4020</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange ADAccess</td>
+                                                    <td class="text"><span>Process w3wp.exe (OWA) (PID=27660). Got unhandled exception in ProvisioningCache activity Expired organizations cleaner, the activity is terminated. Exception: Thread was being aborted..</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(255, 0, 0);"></i></td>
+                                                    <td>ExServer10.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 4020</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange ADAccess</td>
+                                                    <td class="text"><span>Process w3wp.exe (OWA) (PID=27660). Got unhandled exception in ProvisioningCache activity Expired organizations cleaner, the activity is terminated. Exception: Thread was being aborted..</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer02.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">7</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer08.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">7</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer04.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">2</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer12.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer11.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer07.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">5</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer02.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">6</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer03.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">6</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer01.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5</td>
+                                                    <td class="exev-table-td-small">5</td>
+                                                    <td> MSExchange Web Services</td>
+                                                    <td class="text"><span>A notification for subscription [FgBhcHAzNzAwMDEuc3lzdGVtLmxvY2FsEAAAANSJfBubccZLv2dxB+6e7rxmKpBtTZnVCBAAAACvgofK9eL9Rapyje4hhOVI] against endpoint [https://uc1.contoso.local/Storage/Notification.ashx?server=APP371151.contoso.local&amp;                                          cwt=AAMFEI3VAccW12Vcu_jnBaoe9cmBEI3VAccW12Vcu_jnBaoe9cmCAilogyCEsyCainghHmVzHN0UFwxk_HjQFraq2QlwtkavuAUjooYIxzyge5CZ1QgICC9zdG9yYWdl] couldn't be sent. The operation will be retried. Details: WebException: Unable to connect to the remote server Status: ConnectFailure    at                                           System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult, TransportContext&amp; context)
+                                               at System.Net.HttpWebRequest.EndGetRequestStream(IAsyncResult asyncResult)
+                                               at Microsoft.Exchange.Services.Core.NotificationServiceClient.CreateSendNotificationRequestAsync(IAsyncResult requestAsyncResult)</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer04.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 63</td>
+                                                    <td class="exev-table-td-small">3</td>
+                                                    <td> Microsoft-Windows-WMI</td>
+                                                    <td class="text"><span>A provider, PolicyAgentInstanceProvider, has been registered in the Windows Management Instrumentation namespace ROOT\ccm\policy\S_1_5_21_2831718744_4150186928_1619289098_7966 to use the LocalSystem account. This account is privileged and the provider may cause a                                          security violation if it does not correctly impersonate user requests.</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer08.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1035</td>
+                                                    <td class="exev-table-td-small">2</td>
+                                                    <td> MSExchangeFrontEndTransport</td>
+                                                    <td class="text"><span>Inbound authentication failed with error LogonDenied for Receive connector Default Frontend APP370004. The authentication mechanism is Ntlm. The source IP address of the client who tried to authenticate to Microsoft Exchange is [172.19.100.245].</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer04.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1035</td>
+                                                    <td class="exev-table-td-small">2</td>
+                                                    <td> MSExchangeFrontEndTransport</td>
+                                                    <td class="text"><span>Inbound authentication failed with error LogonDenied for Receive connector Default Frontend APP370004. The authentication mechanism is Ntlm. The source IP address of the client who tried to authenticate to Microsoft Exchange is [172.19.100.245].</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer07.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1035</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchangeFrontEndTransport</td>
+                                                    <td class="text"><span>Inbound authentication failed with error LogonDenied for Receive connector Default Frontend APP370004. The authentication mechanism is Ntlm. The source IP address of the client who tried to authenticate to Microsoft Exchange is [172.19.100.245].</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer02.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1040</td>
+                                                    <td class="exev-table-td-small">2</td>
+                                                    <td> MSExchange ActiveSync</td>
+                                                    <td class="text"><span>The average of the most recent heartbeat intervals [136] for request [Sync] used by clients is less than or equal to [540].
+                                            Make sure that your firewall configuration is set to work correctly with Exchange ActiveSync and direct push technology. Specifically, make sure that your firewall is configured so that requests to Exchange ActiveSync do not expire before they have the opportunity to be processed.
+
+                                            For more information about how to configure firewall settings when using Exchange ActiveSync, see Microsoft Knowledge Base article 905013, "Enterprise Firewall Configuration for Exchange ActiveSync Direct Push Technology" (http://go.microsoft.com/fwlink/?linkid=3052&amp;kbid=905013).</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer03.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1040</td>
+                                                    <td class="exev-table-td-small">9</td>
+                                                    <td> MSExchange ActiveSync</td>
+                                                    <td class="text"><span>The average of the most recent heartbeat intervals [136] for request [Sync] used by clients is less than or equal to [540].
+                                            Make sure that your firewall configuration is set to work correctly with Exchange ActiveSync and direct push technology. Specifically, make sure that your firewall is configured so that requests to Exchange ActiveSync do not expire before they have the opportunity to be processed.
+
+                                            For more information about how to configure firewall settings when using Exchange ActiveSync, see Microsoft Knowledge Base article 905013, "Enterprise Firewall Configuration for Exchange ActiveSync Direct Push Technology" (http://go.microsoft.com/fwlink/?linkid=3052&amp;kbid=905013).</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer02.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1051</td>
+                                                    <td class="exev-table-td-small">3</td>
+                                                    <td> MSExchange Extensibility</td>
+                                                    <td class="text"><span>Agent 'Mailbox Rules Agent' caused an unhandled exception 'StorageTransientException: Query/Update out of office history operation.' while handling event 'OnDeliveredMessage'</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer07.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1051</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange Extensibility</td>
+                                                    <td class="text"><span>Agent 'Mailbox Rules Agent' caused an unhandled exception 'StorageTransientException: Query/Update out of office history operation.' while handling event 'OnDeliveredMessage'</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer07.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 1309</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> ASP.NET 4.0.30319.0</td>
+                                                    <td class="text"><span>Event code: 3001 
+                                            Event message: The request has been aborted. 
+                                            Event time: 4/3/2018 11:58:40 AM 
+                                            Event time (UTC): 4/3/2018 9:58:40 AM 
+                                            Event ID: 3b48ec5c898d4b02b762cb28d1753868 
+                                            Event sequence: 2 
+                                            Event occurrence: 1 
+                                            Event detail code: 0 
+
+                                            Application information: 
+                                                Application domain: /LM/W3SVC/2/ROOT/Rpc-6-131670104373362775 
+                                                Trust level: Full 
+                                                Application Virtual Path: /Rpc 
+                                                Application Path: C:\WINDOWS\System32\RpcProxy\ 
+                                                Machine name: APP370007 
+
+                                            Process information: 
+                                                Process ID: 43248 
+                                                Process name: w3wp.exe 
+                                                Account name: NT AUTHORITY\SYSTEM 
+
+                                            Exception information: 
+                                                Exception type: HttpException 
+                                                Exception message: Request timed out.
+
+
+
+                                            Request information: 
+                                                Request URL: https://ExServer07.contoso.local:444/rpc/rpcproxy.dll?ExServer07.contoso.local:6001 
+                                                Request path: /rpc/rpcproxy.dll 
+                                                User host address: fe80::70e4:6c92:3fe3:20e943248 
+                                                User: NT AUTHORITY\SYSTEM 
+                                                Is authenticated: True 
+                                                Authentication Type: Negotiate 
+                                                Thread account name: NT AUTHORITY\SYSTEM 
+
+                                            Thread information: 
+                                                Thread ID: 465 
+                                                Thread account name: NT AUTHORITY\SYSTEM 
+                                                Is impersonating: False 
+                                                Stack trace: 
+
+
+                                            Custom event details: 
+                                            </span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer08.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 2002</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange Front End HTTP Proxy</td>
+                                                    <td class="text"><span>[Mapi] The number of outstanding requests for guard TargetBackend("ExServer04.contoso.local") has exceeded the max limit 150. Current request will be rejected.</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer04.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 2937</td>
+                                                    <td class="exev-table-td-small">2</td>
+                                                    <td> MSExchange ADAccess</td>
+                                                    <td class="text"><span>Process w3wp.exe (FE_Ews) (PID=7316). Object [CN=Exchange Online,CN=Partner Applications,CN=Auth Configuration,CN=MSX,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=system,DC=local]. Property [LinkedAccount] is set to value [contoso.local/Deleted                                             Objects/Exchange Online-ApplicationAccount
+                                            DEL:2177e18d-633d-4b7c-af0b-bacf4ae38659], it is pointing to the Deleted Objects container in Active Directory. This property should be fixed as soon as possible.</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer02.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 2937</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange ADAccess</td>
+                                                    <td class="text"><span>Process w3wp.exe (FE_Ews) (PID=7316). Object [CN=Exchange Online,CN=Partner Applications,CN=Auth Configuration,CN=MSX,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=system,DC=local]. Property [LinkedAccount] is set to value [contoso.local/Deleted                                             Objects/Exchange Online-ApplicationAccount
+                                            DEL:2177e18d-633d-4b7c-af0b-bacf4ae38659], it is pointing to the Deleted Objects container in Active Directory. This property should be fixed as soon as possible.</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer11.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 2937</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange ADAccess</td>
+                                                    <td class="text"><span>Process w3wp.exe (FE_Ews) (PID=7316). Object [CN=Exchange Online,CN=Partner Applications,CN=Auth Configuration,CN=MSX,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=system,DC=local]. Property [LinkedAccount] is set to value [contoso.local/Deleted                                             Objects/Exchange Online-ApplicationAccount
+                                            DEL:2177e18d-633d-4b7c-af0b-bacf4ae38659], it is pointing to the Deleted Objects container in Active Directory. This property should be fixed as soon as possible.</span></td>
+                                                </tr>
+                                                <tr>
+                                                     <td class="exev-table-td-small"><i class="ms-Icon ms-Icon--IncidentTriangle"" style="color: rgb(240, 173, 78);"></i></td>
+                                                    <td>ExServer04.contoso.local</td>
+                                                    <td class="exev-table-td-small"> 5001</td>
+                                                    <td class="exev-table-td-small">1</td>
+                                                    <td> MSExchange Mid-Tier Storage</td>
+                                                    <td class="text"><span>Multiple errors occurred while saving items for mailbox ''. The error was encountered 12 times on this session with the client information: .</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="ms-Pivot-content" data-content="SystemLog">
+                                    <table class="ms-Table ms-Table--fixed" style="min-width: 1400px;">
+                                        <thead>
+                                            <tr>
+                                                <th class="exev-table-td-small"></th>
+                                                <th>Servername</th>
+                                                <th class="exev-table-td-small">EventID</th>
+                                                <th class="exev-table-td-small">EventCount</th>
+                                                <th>ProviderName</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="ms-Table-overflow" style="min-width: 1400px;">
+                                        <table class="ms-Table ms-Table--fixed">
+                                            <tbody id="myTable">
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="ms-Pivot-content" data-content="ApplicationLogFiltered">
+                                    <table class="ms-Table ms-Table--fixed" style="min-width: 1400px;">
+                                        <thead>
+                                            <tr>
+                                                <th class="exev-table-td-small"></th>
+                                                <th>Servername</th>
+                                                <th class="exev-table-td-small">EventID</th>
+                                                <th class="exev-table-td-small">EventCount</th>
+                                                <th>ProviderName</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="ms-Table-overflow" style="min-width: 1400px;">
+                                        <table class="ms-Table ms-Table--fixed">
+                                            <tbody id="myTable">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="ms-Pivot-content" data-content="SystemLogFiltered">
+                                    <table class="ms-Table ms-Table--fixed" style="min-width: 1400px;">
+                                        <thead>
+                                            <tr>
+                                                <th class="exev-table-td-small"></th>
+                                                <th>Servername</th>
+                                                <th class="exev-table-td-small">EventID</th>
+                                                <th class="exev-table-td-small">EventCount</th>
+                                                <th>ProviderName</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="ms-Table-overflow" style="min-width: 1400px;">
+                                        <table class="ms-Table ms-Table--fixed">
+                                            <tbody id="myTable">
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- End Site -->
+
+    <script>
+    var currPage = window.location.pathname.replace(/\//g, '');
+    if (currPage) {
+      document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+    }
+  </script>
+
+    <script type="text/javascript">
+    var PivotElements = document.querySelectorAll(".ms-Pivot");
+
+    for (var i = 0; i < PivotElements.length; i++) {
+      new fabric['Pivot'](PivotElements[i]);
+    }
+  </script>
+
+    <script type="text/javascript">
+    var PanelExamples = document.getElementsByClassName("ms-Panel-NavButton");
+    for (var i = 0; i < PanelExamples.length; i++) {
+      (function () {
+        var PanelExampleButton = PanelExamples[i].querySelector(".ms-Button");
+        var PanelExamplePanel = PanelExamples[i].querySelector(".ms-Panel");
+        PanelExampleButton.addEventListener("click", function (i) {
+          new fabric['Panel'](PanelExamplePanel);
+        });
+      }());
+    }
+  </script>
+
+    <script type="text/javascript">
+    var TableElements = document.querySelectorAll(".ms-Table");
+    for (var i = 0; i < TableElements.length; i++) {
+      new fabric['Table'](TableElements[i]);
+    }
+  </script>
+
+    <script type="text/javascript">
+    var PersonaElements = document.querySelectorAll(".ms-Persona");
+    for (var i = 0; i < PersonaElements.length; i++) {
+      new fabric['Persona'](PersonaElements[i]);
+    }
+  </script>
+
+    <script type="text/javascript">
+    var ListItemElements = document.querySelectorAll(".ms-ListItem");
+    for (var i = 0; i < ListItemElements.length; i++) {
+      new fabric['ListItem'](ListItemElements[i]);
+    }
+  </script>
+
+    <script type="text/javascript">
+    var SearchBoxElements = document.querySelectorAll(".ms-SearchBox");
+    for (var i = 0; i < SearchBoxElements.length; i++) {
+      new fabric['SearchBox'](SearchBoxElements[i]);
+    }
+  </script>
+
+    <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</body>
+
+</html>

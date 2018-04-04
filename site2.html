@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale-1">
+  <title>ThinCenterUI</title>
+
+  <link rel="stylesheet" href="css/fabric.min.css">
+  <link rel="stylesheet" href="css/fabric.css">
+  <link rel="stylesheet" href="css/fabric.components.min.css" />
+  <link rel="stylesheet" href="css/docs.min.css">
+  <link rel="stylesheet" href="css/docs.css">
+  <script src="css/fabric.min.js"></script>
+  <script src="morrischart/jquery.js"></script>
+  <link rel="stylesheet" href="css/thincenter.css">
+  
+</head>
+
+<body class="ms-Fabric">
+  <div id="body-content">
+
+    <div id="Header" class="docs-Header" style="padding-left:70px;">
+      <a class="ms-font-xxl ms-fontColor-white" href="/">Thincenter</a>
+      <div class="Header-buttons">
+
+        <a href="#" class="Header-button ms-fontColor-white">
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-lg10 goaway">
+              <%=Context.User.Identity.Name %>
+            </div>
+            <div class="ms-Grid-col ms-u-lg2" style="width:50px; margin-top:5px;">
+              <div class="ms-Persona ms-Persona--sm" style="width: 45px; height: 45px;">
+                <div class="ms-Persona-imageArea">
+                  <img class="ms-Persona-image" src="https://outlook.office365.com/owa/service.svc/s/GetPersonaPhoto?email=<%=Context.User.Identity.Name %>&amp;UA=0&amp;size=HR64x64&amp;sc=1521450567085">
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+
+    <div class="ms-Panel-NavButton">
+      <button class="ms-Button" style="background-color:#999; border-color:#999; position:fixed; top:0px; left:0px; max-width:52px; min-width:52px; height:50px; z-index:100;">
+        <span class="ms-Button-label">
+          <i class="ms-Icon ms-Icon--GlobalNavButton"></i>
+        </span>
+      </button>
+      <div class="ms-Panel ms-Panel--left">
+        <button class="ms-Panel-closeButton ms-PanelAction-close">
+          <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+        </button>
+        <div class="ms-Panel-contentInner">
+          <p class="ms-Panel-headerText">Exchange Health Center</p>
+          <div class="ms-Panel-content">
+
+            <ul class="navi">
+              <div class="ms-Grid">
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="default.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--AutoRacing"></i>
+                                  <div>EHC Dashboard</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="site1.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Health"></i>
+                                  <div>Services Balancing</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="site2.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--MailForward"></i>
+                                  <div>Mail Queue View</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="site4.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Warning12"></i>
+                                  <div>Exchange Events</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--HardDriveGroup"></i>
+                                  <div>Storage Monitor</div>
+                              </div>
+                          </a>
+                      </il>
+
+
+
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Database"></i>
+                                  <div>Database Monitor</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <p class="ms-Panel-headerText">Skype Health Center</p>
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="site3.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent" style="background-color:#12A5F4">
+                                  <i class="ms-Icon ms-Icon--SkypeForBusinessLogo"></i>
+                                  <div>Skype Dashboard</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent" style="background-color:#12A5F4">
+                                  <i class="ms-Icon ms-Icon--TransferCall"></i>
+                                  <div>Call Quality Board</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+              </div>
+
+          </ul>
+
+            <!-- End Nav -->
+
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="ms-Grid">
+      <div class="ms-Grid-row">
+        <div class="docs-Styles-section" id="localization">
+
+          <div class="ms-Breadcrumb" style="padding-top:50px; padding-left:15px;">
+            <div class="ms-Breadcrumb-overflow">
+              <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More"></div>
+              <div class="ms-Breadcrumb-overflowMenu">
+                <ul class="ms-ContextualMenu is-open"></ul>
+              </div>
+            </div>
+            <ul class="ms-Breadcrumb-list">
+              <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink">ThinCenter</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+              </li>
+              <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink">Dashboard</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start Site -->
+
+      <div class="ms-Grid thinframe">
+
+
+
+        <div class="ms-Grid-row">
+
+          <div class="thingroup-12" style="overflow:auto;">
+
+            <div class="ms-Grid-row">
+              <span class="ms-font-su ms-fontColor-themePrimary">Exchange Mail Queues</span>
+            </div>
+
+            <div class="ms-Grid-row" style="margin-top:20px;">
+              <div class="ms-SearchBox">
+                <input class="ms-SearchBox-field" type="text" value="" id="myInput">
+                <label class="ms-SearchBox-label">
+                  <i class="ms-SearchBox-icon ms-Icon ms-Icon--Search"></i>
+                  <span class="ms-SearchBox-text">Search</span>
+                </label>
+                <div class="ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel">
+                  <button class="ms-CommandButton-button">
+                    <span class="ms-CommandButton-icon">
+                      <i class="ms-Icon ms-Icon--Clear"></i>
+                    </span>
+                    <span class="ms-CommandButton-label"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="ms-Grid-row" style="height:500px;">
+
+              <table class="ms-Table ms-Table--fixed" style="min-width: 1400px;">
+                <thead>
+                  <tr>
+                    <th>identity</th>
+                    <th>messagecount</th>
+                    <th>velocity</th>
+                    <th>status</th>
+                    <th>deliverytype</th>
+                    <th>nexthopdomain</th>
+                    <th>nexthopcategory</th>
+                    <th>retrycount</th>
+                    <th>nextretrytime</th>
+                  </tr>
+                </thead>
+              </table>
+              <div class="ms-Table-overflow" style="min-width: 1400px;">
+                <table class="ms-Table ms-Table--fixed">
+                  <tbody id="myTable">
+                    <tr>
+                      <td>APP370001\Shadow\3</td>
+                      <td>16</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370002.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370001\Shadow\4</td>
+                      <td>14</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370004.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370001\Shadow\5</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370003.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370002\Shadow\3</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370001.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370002\Shadow\4</td>
+                      <td>1</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370004.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370002\Shadow\5</td>
+                      <td>3</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370003.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370003\Shadow\3</td>
+                      <td>18</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370001.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370003\Shadow\4</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370004.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370003\Shadow\10</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370002.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370004\Shadow\3</td>
+                      <td>3</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370003.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370004\Shadow\4</td>
+                      <td>16</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370001.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370004\Shadow\12</td>
+                      <td>2</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370002.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370005\Shadow\3</td>
+                      <td>9</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370008.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370005\Shadow\4</td>
+                      <td>12</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370006.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370005\Shadow\5</td>
+                      <td>11</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370007.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370006\Shadow\3</td>
+                      <td>4</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370008.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370006\Shadow\4</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370005.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370006\Shadow\5</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370007.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370007\Shadow\3</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370008.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370007\Shadow\4</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370006.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370007\Shadow\517</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370005.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370008\Shadow\3</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370007.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370008\Shadow\4</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370005.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370008\Shadow\5</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370006.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370009\Shadow\3</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370012.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370009\Shadow\5</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370011.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370009\Shadow\7</td>
+                      <td>4</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370010.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370010\Shadow\3</td>
+                      <td>4</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370012.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370010\Shadow\4</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370009.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370010\Shadow\5</td>
+                      <td>3</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370011.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370011\Shadow\3</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370012.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370011\Shadow\4</td>
+                      <td>9</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370010.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370011\Shadow\5</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370009.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370012\Shadow\3</td>
+                      <td>7</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370011.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370012\Shadow\4</td>
+                      <td>10</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370009.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>APP370012\Shadow\5</td>
+                      <td>4</td>
+                      <td>0</td>
+                      <td>Ready</td>
+                      <td>ShadowRedundancy</td>
+                      <td>app370010.system.local</td>
+                      <td>Internal</td>
+                      <td>0</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  </div>
+
+  <!-- End Site -->
+
+  <script>
+    var currPage = window.location.pathname.replace(/\//g, '');
+    if (currPage) {
+      document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+    }
+  </script>
+
+  <script type="text/javascript">
+    var PanelExamples = document.getElementsByClassName("ms-Panel-NavButton");
+    for (var i = 0; i < PanelExamples.length; i++) {
+      (function () {
+        var PanelExampleButton = PanelExamples[i].querySelector(".ms-Button");
+        var PanelExamplePanel = PanelExamples[i].querySelector(".ms-Panel");
+        PanelExampleButton.addEventListener("click", function (i) {
+          new fabric['Panel'](PanelExamplePanel);
+        });
+      }());
+    }
+  </script>
+
+  <script type="text/javascript">
+    var TableElements = document.querySelectorAll(".ms-Table");
+    for (var i = 0; i < TableElements.length; i++) {
+      new fabric['Table'](TableElements[i]);
+    }
+  </script>
+
+  <script type="text/javascript">
+    var PersonaElements = document.querySelectorAll(".ms-Persona");
+    for (var i = 0; i < PersonaElements.length; i++) {
+      new fabric['Persona'](PersonaElements[i]);
+    }
+  </script>
+
+  <script type="text/javascript">
+    var ListItemElements = document.querySelectorAll(".ms-ListItem");
+    for (var i = 0; i < ListItemElements.length; i++) {
+      new fabric['ListItem'](ListItemElements[i]);
+    }
+  </script>
+
+  <script type="text/javascript">
+    var SearchBoxElements = document.querySelectorAll(".ms-SearchBox");
+    for (var i = 0; i < SearchBoxElements.length; i++) {
+      new fabric['SearchBox'](SearchBoxElements[i]);
+    }
+  </script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</body>
+
+</html>

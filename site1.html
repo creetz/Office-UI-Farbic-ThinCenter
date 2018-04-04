@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale-1">
+  <title>ThinCenterUI</title>
+
+  <link rel="stylesheet" href="css/fabric.min.css">
+  <link rel="stylesheet" href="css/fabric.css">
+  <link rel="stylesheet" href="css/fabric.components.min.css" />
+  <link rel="stylesheet" href="css/docs.min.css">
+  <link rel="stylesheet" href="css/docs.css">
+  <script src="css/fabric.min.js"></script>
+  <script src="morrischart/jquery.js"></script>
+  <link rel="stylesheet" href="css/thincenter.css"> 
+
+  <style>
+
+    .morris-hover.morris-default-style {
+      position: absolute !important;
+      background-color: ghostWhite;
+    }
+
+    svg {
+      width: 100% !important;
+    }
+
+  </style>
+
+</head>
+
+<body class="ms-Fabric">
+  <div id="body-content">
+
+    <div id="Header" class="docs-Header" style="padding-left:70px;">
+      <a class="ms-font-xxl ms-fontColor-white" href="/">Thincenter</a>
+      <div class="Header-buttons">
+
+        <a href="#" class="Header-button ms-fontColor-white">
+          <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-lg10 goaway">
+              <%=Context.User.Identity.Name %>
+            </div>
+            <div class="ms-Grid-col ms-u-lg2" style="width:50px; margin-top:5px;">
+              <div class="ms-Persona ms-Persona--sm" style="width: 45px; height: 45px;">
+                <div class="ms-Persona-imageArea">
+                  <img class="ms-Persona-image" src="https://outlook.office365.com/owa/service.svc/s/GetPersonaPhoto?email=<%=Context.User.Identity.Name %>&amp;UA=0&amp;size=HR64x64&amp;sc=1521450567085">
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+
+    <div class="ms-Panel-NavButton">
+      <button class="ms-Button" style="background-color:#999; border-color:#999; position:fixed; top:0px; left:0px; max-width:52px; min-width:52px; height:50px; z-index:100;">
+        <span class="ms-Button-label">
+          <i class="ms-Icon ms-Icon--GlobalNavButton"></i>
+        </span>
+      </button>
+      <div class="ms-Panel ms-Panel--left">
+        <button class="ms-Panel-closeButton ms-PanelAction-close">
+          <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+        </button>
+        <div class="ms-Panel-contentInner">
+          <p class="ms-Panel-headerText">Exchange Health Center</p>
+          <div class="ms-Panel-content">
+
+            <ul class="navi">
+              <div class="ms-Grid">
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="default.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--AutoRacing"></i>
+                                  <div>EHC Dashboard</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="site1.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Health"></i>
+                                  <div>Services Balancing</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="site2.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--MailForward"></i>
+                                  <div>Mail Queue View</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="site4.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Warning12"></i>
+                                  <div>Exchange Events</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--HardDriveGroup"></i>
+                                  <div>Storage Monitor</div>
+                              </div>
+                          </a>
+                      </il>
+
+
+
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent">
+                                  <i class="ms-Icon ms-Icon--Database"></i>
+                                  <div>Database Monitor</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+                  <p class="ms-Panel-headerText">Skype Health Center</p>
+                  <div class="ms-Grid-row">
+                      <il>
+                          <a class="ms-Link" href="site3.html">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent" style="background-color:#12A5F4">
+                                  <i class="ms-Icon ms-Icon--SkypeForBusinessLogo"></i>
+                                  <div>Skype Dashboard</div>
+                              </div>
+                          </a>
+                      </il>
+
+                      <il>
+                          <a class="ms-Link" href="#">
+                              <div class="ms-Grid-col ms-u-lg6 centercontent" style="background-color:#12A5F4">
+                                  <i class="ms-Icon ms-Icon--TransferCall"></i>
+                                  <div>Call Quality Board</div>
+                              </div>
+                          </a>
+                      </il>
+                  </div>
+
+              </div>
+
+          </ul>
+
+            <!-- End Nav -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ms-Grid">
+      <div class="ms-Grid-row">
+        <div class="docs-Styles-section" id="localization">
+
+          <div class="ms-Breadcrumb" style="padding-top:50px; padding-left:15px;">
+            <div class="ms-Breadcrumb-overflow">
+              <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--More"></div>
+              <div class="ms-Breadcrumb-overflowMenu">
+                <ul class="ms-ContextualMenu is-open"></ul>
+              </div>
+            </div>
+            <ul class="ms-Breadcrumb-list">
+              <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink">ThinCenter</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+              </li>
+              <li class="ms-Breadcrumb-listItem">
+                <a class="ms-Breadcrumb-itemLink">DAG Balancing</a>
+                <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start Site -->
+
+      <div class="ms-Grid thinframe">
+<!--
+          <div class="ms-Grid-row">
+
+              <div class="thingroup-12">
+    
+                <div class="ms-Grid-row">
+                  <span class="ms-font-su ms-fontColor-themePrimary">Exchange Server</span>
+                </div>
+    
+                <div class="ms-Grid-row">
+                  
+    
+                  
+    
+                  <div class="ms-Grid-col ms-u-lg3 ms-Panel-ExchangeServer">
+                    <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                      <div class="ms-ListItem-image">
+                        <i class="ms-Icon ms-Icon--Server"></i>
+                      </div>
+                      <span class="ms-ListItem-primaryText">ExServer01</span>
+                      <span class="ms-ListItem-secondaryText">Exchange Server 2013 cu19</span>
+                      <span class="ms-ListItem-tertiaryText">Roles: Mailbox, ClientAccess</span>
+                      <span class="ms-ListItem-metaText">2:42p</span>
+                      <div class="ms-ListItem-selectionTarget"></div>
+                      <div class="ms-ListItem-actions">
+                        <div class="ms-ListItem-action">
+                          <i class="ms-Icon ms-Icon--Mail"></i>
+                        </div>
+                        <div class="ms-ListItem-action">
+                          <i class="ms-Icon ms-Icon--Delete"></i>
+                        </div>
+                        <div class="ms-ListItem-action">
+                          <i class="ms-Icon ms-Icon--Flag"></i>
+                        </div>
+                        <div class="ms-ListItem-action">
+                          <i class="ms-Icon ms-Icon--Pinned"></i>
+                        </div>
+                      </div>
+                    </li>
+                    <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                      <button class="ms-Panel-closeButton ms-PanelAction-close">
+                        <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                      </button>
+                      <div class="ms-Panel-contentInner">
+                        <p class="ms-Panel-headerText">ExServer12</p>
+                        <div class="ms-Panel-content">
+                          <span class="ms-font-m">Exchange Server 2013 cu19</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+              </div>
+    
+            </div>
+          -->
+
+        <!-- Start -->
+
+        <div class="ms-Grid-row">
+
+          <div class="ms-Grid-col ms-u-lg3">
+
+            <div class="thingroup-6">
+
+              <span class="ms-font-su ms-fontColor-themePrimary">Database Availability Groups</span>
+             
+              <div class="ms-Panel-ExchangeServer">
+                <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                  <div class="ms-ListItem-image">
+                    <i class="ms-Icon ms-Icon--OfflineStorageSolid"></i>
+                  </div>
+                  <span class="ms-ListItem-primaryText">DAG01</span>
+                  <span class="ms-ListItem-secondaryText">PAM: ExServer01</span>
+                  <span class="ms-ListItem-tertiaryText">WitnessServerInUse:Primary</span>
+                  <span class="ms-ListItem-metaText">2:42p</span>
+                  <div class="ms-ListItem-selectionTarget"></div>
+                  <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Mail"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Delete"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Flag"></i>
+                    </div>
+                    <div class="ms-ListItem-action">
+                      <i class="ms-Icon ms-Icon--Pinned"></i>
+                    </div>
+                  </div>
+                  <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                    <button class="ms-Panel-closeButton ms-PanelAction-close">
+                      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                    </button>
+                    <div class="ms-Panel-contentInner">
+                      <p class="ms-Panel-headerText">DAG01</p>
+                      <div class="ms-Panel-content">
+                        <span class="ms-font-m">DatabaseAvailabilityGroups</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+            </div>
+          </div>
+
+          <div class="ms-Grid-col ms-u-lg9">
+            <div class="thingroup-6">
+              <span class="ms-font-su ms-fontColor-themePrimary">DAG01</span>
+              <div id="barchart-DAG01" style="height: 195px;"></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Ende -->
+
+        <!-- Start -->
+
+        <div class="ms-Grid-row">
+
+            <div class="ms-Grid-col ms-u-lg3">
+  
+              <div class="thingroup-6">
+  
+                <span class="ms-font-su ms-fontColor-themePrimary">Database Availability Groups</span>
+               
+                <div class="ms-Panel-ExchangeServer">
+                  <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                    <div class="ms-ListItem-image">
+                      <i class="ms-Icon ms-Icon--OfflineStorageSolid"></i>
+                    </div>
+                    <span class="ms-ListItem-primaryText">DAG02</span>
+                    <span class="ms-ListItem-secondaryText">PAM: ExServer09</span>
+                    <span class="ms-ListItem-tertiaryText">WitnessServerInUse:Primary</span>
+                    <span class="ms-ListItem-metaText">2:42p</span>
+                    <div class="ms-ListItem-selectionTarget"></div>
+                    <div class="ms-ListItem-actions">
+                      <div class="ms-ListItem-action">
+                        <i class="ms-Icon ms-Icon--Mail"></i>
+                      </div>
+                      <div class="ms-ListItem-action">
+                        <i class="ms-Icon ms-Icon--Delete"></i>
+                      </div>
+                      <div class="ms-ListItem-action">
+                        <i class="ms-Icon ms-Icon--Flag"></i>
+                      </div>
+                      <div class="ms-ListItem-action">
+                        <i class="ms-Icon ms-Icon--Pinned"></i>
+                      </div>
+                    </div>
+                    <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                      <button class="ms-Panel-closeButton ms-PanelAction-close">
+                        <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                      </button>
+                      <div class="ms-Panel-contentInner">
+                        <p class="ms-Panel-headerText">DAG02</p>
+                        <div class="ms-Panel-content">
+                          <span class="ms-font-m">DatabaseAvailabilityGroups</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+  
+            <div class="ms-Grid-col ms-u-lg9">
+              <div class="thingroup-6">
+                <span class="ms-font-su ms-fontColor-themePrimary">DAG02</span>
+                <div id="barchart-DAG02" style="height: 195px;"></div>
+              </div>
+            </div>
+  
+          </div>
+          <!-- Ende -->
+
+                  <!-- Start -->
+
+        <div class="ms-Grid-row">
+
+            <div class="ms-Grid-col ms-u-lg3">
+  
+              <div class="thingroup-6">
+  
+                <span class="ms-font-su ms-fontColor-themePrimary">Database Availability Groups</span>
+               
+                <div class="ms-Panel-ExchangeServer">
+                  <li class="ms-ListItem is-selectable2 ms-ListiTem--image" tabindex="0">
+                    <div class="ms-ListItem-image">
+                      <i class="ms-Icon ms-Icon--OfflineStorageSolid"></i>
+                    </div>
+                    <span class="ms-ListItem-primaryText">DAG03</span>
+                    <span class="ms-ListItem-secondaryText">PAM: ExServer09</span>
+                    <span class="ms-ListItem-tertiaryText">WitnessServerInUse:Primary</span>
+                    <span class="ms-ListItem-metaText">2:42p</span>
+                    <div class="ms-ListItem-selectionTarget"></div>
+                    <div class="ms-ListItem-actions">
+                      <div class="ms-ListItem-action">
+                        <i class="ms-Icon ms-Icon--Mail"></i>
+                      </div>
+                      <div class="ms-ListItem-action">
+                        <i class="ms-Icon ms-Icon--Delete"></i>
+                      </div>
+                      <div class="ms-ListItem-action">
+                        <i class="ms-Icon ms-Icon--Flag"></i>
+                      </div>
+                      <div class="ms-ListItem-action">
+                        <i class="ms-Icon ms-Icon--Pinned"></i>
+                      </div>
+                    </div>
+                    <div class="ms-Panel ms-Panel--lg ms-Panel-ExchangeServer-Details">
+                      <button class="ms-Panel-closeButton ms-PanelAction-close">
+                        <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                      </button>
+                      <div class="ms-Panel-contentInner">
+                        <p class="ms-Panel-headerText">DAG03</p>
+                        <div class="ms-Panel-content">
+                          <span class="ms-font-m">DatabaseAvailabilityGroups</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </div>
+  
+            <div class="ms-Grid-col ms-u-lg9">
+              <div class="thingroup-6">
+                <span class="ms-font-su ms-fontColor-themePrimary">DAG03</span>
+                <div id="barchart-DAG03" style="height: 195px;"></div>
+              </div>
+            </div>
+  
+          </div>
+          <!-- Ende -->
+
+
+        
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  <!-- End Site -->
+
+  <script>
+    var currPage = window.location.pathname.replace(/\//g, '');
+    if (currPage) {
+      document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+    }
+  </script>
+
+  <script type="text/javascript">
+    var PanelExamples = document.getElementsByClassName("ms-Panel-NavButton");
+    for (var i = 0; i < PanelExamples.length; i++) {
+      (function () {
+        var PanelExampleButton = PanelExamples[i].querySelector(".ms-Button");
+        var PanelExamplePanel = PanelExamples[i].querySelector(".ms-Panel");
+        PanelExampleButton.addEventListener("click", function (i) {
+          new fabric['Panel'](PanelExamplePanel);
+        });
+      }());
+    }
+  </script>
+
+  <script type="text/javascript">
+    var PanelExamples = document.getElementsByClassName("ms-Panel-ExchangeServer");
+    for (var i = 0; i < PanelExamples.length; i++) {
+      (function () {
+        var PanelExampleButton = PanelExamples[i].querySelector(".ms-ListItem");
+        var PanelExamplePanel = PanelExamples[i].querySelector(".ms-Panel-ExchangeServer-Details");
+        PanelExampleButton.addEventListener("click", function (i) {
+          new fabric['Panel'](PanelExamplePanel);
+        });
+      }());
+    }
+  </script>
+
+  <script type="text/javascript">
+    var PersonaElements = document.querySelectorAll(".ms-Persona");
+    for (var i = 0; i < PersonaElements.length; i++) {
+      new fabric['Persona'](PersonaElements[i]);
+    }
+  </script>
+
+  <script type="text/javascript">
+    var ListItemElements = document.querySelectorAll(".ms-ListItem");
+    for (var i = 0; i < ListItemElements.length; i++) {
+      new fabric['ListItem'](ListItemElements[i]);
+    }
+  </script>
+
+  <!-- start Morris Chart -->
+
+  <script src="morrischart/plugins/morris/morris.min.js"></script>
+  <script src="morrischart/plugins/morris/raphael.min.js"></script>
+  <script src="morrischart/plugins/morris.css"></script>
+  <script>
+       var DAG01 = Morris.Bar({
+    element: 'barchart-DAG01',
+    data: [
+{ y: 'ExServer01', rpcmbx: 754, rpccas: 662 , owa: 3 , eas: 4 , ews: 603 },
+{ y: 'ExServer02', rpcmbx: 774, rpccas: 755 , owa: 4 , eas: 11 , ews: 579 },
+{ y: 'ExServer03', rpcmbx: 740, rpccas: 729 , owa: 3 , eas: 2 , ews: 592 },
+{ y: 'ExServer04', rpcmbx: 1092, rpccas: 748 , owa: 4 , eas: 3 , ews: 615 },
+],
+    resize: true,
+    xkey: 'y',
+    barColors: ['#c072bb','#ffa333','#df6f53','#5fd391','#608ed2'],
+    ykeys: ['rpcmbx','rpccas', 'owa', 'eas', 'ews'],
+    labels: ['Outlook MAPI/RPC (BackEnd)','Outlook MAPI/RPC (FrontEnd)', 'OWA', 'EAS', 'EWS']
+    });
+    
+    $('ul.nav a').on('shown.bs.tab',function (e) {
+       DAG01.redraw();
+    });
+    
+    var DAG02 = Morris.Bar({
+    element: 'barchart-DAG02',
+    data: [
+{ y: 'ExServer05', rpcmbx: 0, rpccas: 0 , owa: 0 , eas: 0 , ews: 0 },
+{ y: 'ExServer06', rpcmbx: 1179, rpccas: 753 , owa: 4 , eas: 10 , ews: 1095 },
+{ y: 'ExServer07', rpcmbx: 995, rpccas: 663 , owa: 3 , eas: 8 , ews: 887 },
+{ y: 'ExServer08', rpcmbx: 763, rpccas: 744 , owa: 1 , eas: 0 , ews: 714 },
+],
+    resize: true,
+    xkey: 'y',
+    barColors: ['#c072bb','#ffa333','#df6f53','#5fd391','#608ed2'],
+    ykeys: ['rpcmbx','rpccas', 'owa', 'eas', 'ews'],
+    labels: ['Outlook MAPI/RPC (BackEnd)','Outlook MAPI/RPC (FrontEnd)', 'OWA', 'EAS', 'EWS']
+    });
+    
+    $('ul.nav a').on('shown.bs.tab',function (e) {
+       DAG02.redraw();
+    });
+    
+    var DAG03 = Morris.Bar({
+    element: 'barchart-DAG03',
+    data: [
+{ y: 'ExServer09', rpcmbx: 305, rpccas: 666 , owa: 5 , eas: 47 , ews: 295 },
+{ y: 'ExServer10', rpcmbx: 351, rpccas: 671 , owa: 3 , eas: 42 , ews: 307 },
+{ y: 'ExServer11', rpcmbx: 373, rpccas: 663 , owa: 0 , eas: 42 , ews: 310 },
+{ y: 'ExServer12', rpcmbx: 0, rpccas: 659 , owa: 4 , eas: 0 , ews: 287 },
+],
+    resize: true,
+    xkey: 'y',
+    barColors: ['#c072bb','#ffa333','#df6f53','#5fd391','#608ed2'],
+    ykeys: ['rpcmbx','rpccas', 'owa', 'eas', 'ews'],
+    labels: ['Outlook MAPI/RPC (BackEnd)','Outlook MAPI/RPC (FrontEnd)', 'OWA', 'EAS', 'EWS']
+    });
+    
+    $('ul.nav a').on('shown.bs.tab',function (e) {
+       DAG03.redraw();
+    });
+
+  </script>
+
+  <!-- end Morris Chart -->
+
+</body>
+
+</html>
