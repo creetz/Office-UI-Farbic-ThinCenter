@@ -36,7 +36,57 @@
     <div id="Header" class="docs-Header" style="padding-left:70px;">
       <a class="ms-font-xxl ms-fontColor-white" href="/">Thincenter</a>
       <div class="Header-buttons">
-
+ <a href="#" class="Header-button ms-fontColor-white">
+          <div class="ms-Panel-Notification">
+              <li class="ms-ListItem is-selectable3 ms-ListItem3" tabindex="0">
+                <div class="thinnav-button">
+                  <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Ringer"></i>
+                </div>           
+              <div class="ms-Panel ms-Panel2 ms-Panel-Notification-Details">
+                <button class="ms-Panel-closeButton ms-PanelAction-close ms-Panel2-closeButton">
+                  <i class="ms-Panel-closeIcon ms-Icon ms-Icon--Cancel"></i>
+                </button>
+                <div class="ms-Panel-contentInner ms-Panel2-contentInner">
+                  <p class="ms-Panel-headerText ms-Panel2-headerText">Notifications</p>
+                    <div class="ms-Panel-content ms-Panel2-content">
+                      <div class="ms-Grid-row grid-hyperline">
+                        <div class="ms-Grid-col ms-u-lg4">
+                            <i class="ms-Icon ms-Icon--OfflineStorageSolid"></i>
+                        </div>
+                        <div class="ms-Grid-col ms-u-lg8">
+                          <p>ActivationPreference</p>
+                        </div>
+                      </div>
+                      <div class="ms-Grid-row grid-hyperline">
+                        <div class="ms-Grid-col ms-u-lg4">
+                            <i class="ms-Icon ms-Icon--ExploreData"></i>
+                        </div>
+                        <div class="ms-Grid-col ms-u-lg8">
+                          <p>ContentIndexState</p>
+                        </div>
+                      </div>
+                      <div class="ms-Grid-row grid-hyperline">
+                        <div class="ms-Grid-col ms-u-lg4">
+                            <i class="ms-Icon ms-Icon--BuildQueue"></i>
+                        </div>
+                        <div class="ms-Grid-col ms-u-lg8">
+                          <p>QueueLength</p>
+                        </div>
+                      </div>
+                      <div class="ms-Grid-row grid-hyperline">
+                        <div class="ms-Grid-col ms-u-lg4">
+                            <i class="ms-Icon ms-Icon--HardDrive"></i>
+                        </div>
+                        <div class="ms-Grid-col ms-u-lg8">
+                          <p>DiskSpace</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </li>
+          </div>
+        </a>
         <a href="#" class="Header-button ms-fontColor-white">
           <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-lg10 goaway">
@@ -873,6 +923,21 @@
       }());
     }
   </script>
+
+
+<script type="text/javascript">
+  var PanelExamples = document.getElementsByClassName("ms-Panel-Notification");
+  for (var i = 0; i < PanelExamples.length; i++) {
+    (function () {
+      var PanelExampleButton = PanelExamples[i].querySelector(".ms-ListItem");
+      var PanelExamplePanel = PanelExamples[i].querySelector(".ms-Panel-Notification-Details");
+      PanelExampleButton.addEventListener("click", function (i) {
+        new fabric['Panel'](PanelExamplePanel);
+      });
+    }());
+  }
+</script>
+
 
   <script type="text/javascript">
     var PanelExamples = document.getElementsByClassName("ms-Panel-ExchangeServer");

@@ -89,6 +89,17 @@
   outline: 1px solid transparent;
   }
 
+  .ms-ListItem.is-selectable3:hover {
+    
+    cursor: pointer;
+    outline: 1px solid transparent;
+    }
+
+    .ms-ListItem3 {
+      padding: 0px 0px 0px 0px;
+      color:#fff;
+    }
+
   .Widget1 {
     margin: 0px; 
     top: 10px; 
@@ -241,4 +252,35 @@
     margin-left: 20px;
     margin-top: 15px;
     font-size: 30px;
-}
+  }
+
+  .thinnav-button {
+  max-width: 52px;
+  height: 50px;
+  padding-left: 3px;
+  }
+
+  .thinnav-button i {
+    font-size: 24px;
+  }
+
+  .Header-button {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+
+  @media screen and (max-width: 600px) {
+  
+    .ms-Panel-Notification-Details {
+      min-width: 200px;
+      max-width: 300px;
+    }
+
+  }
+
+
+  .ms-Panel-Notification-Details {
+    min-width: 350px;
+  }
+
